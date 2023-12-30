@@ -14,3 +14,5 @@ make a config.json containing
   "token": "bot-token" // exclude Bot from it, added in code
 }
 ```
+
+when using the /petpet command, you can use a userid instead of a direct mention to a user and it'll still work
