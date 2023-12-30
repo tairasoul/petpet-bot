@@ -9,7 +9,7 @@ makeLazy is from [utils/lazy.ts](https://github.com/Vendicated/Vencord/blob/main
 it doesn't have many options but i just wanted to migrate it into a bot
 
 make a config.json containing
-```json
+```json5
 {
   "token": "bot-token" // exclude Bot from it, added in code
 }
