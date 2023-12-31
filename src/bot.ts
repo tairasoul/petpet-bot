@@ -14,12 +14,7 @@ type Command = {
 }
 
 const bot = new oceanic.Client({
-    auth: `Bot ${token}`,
-    gateway: {
-        intents: [
-            "MESSAGE_CONTENT"
-        ]
-    }
+    auth: `Bot ${token}`
 })
 
 const PetPetUtils = new utils.PetPetUtils();
@@ -90,6 +85,6 @@ bot.on("interactionCreate", async (i) => {
             await interaction.editOriginal({content: `There was an error while executing this command, error is ${error}`});
         }
     }
-})
+});
 
 await bot.connect();

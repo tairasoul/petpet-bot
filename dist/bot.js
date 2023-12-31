@@ -7,12 +7,7 @@ import * as utils from "./utils.js";
 import * as builders from "@oceanicjs/builders";
 const { token } = JSON.parse(fs.readFileSync(path.join(__dirname, '..') + "/config.json", 'utf8'));
 const bot = new oceanic.Client({
-    auth: `Bot ${token}`,
-    gateway: {
-        intents: [
-            "MESSAGE_CONTENT"
-        ]
-    }
+    auth: `Bot ${token}`
 });
 const PetPetUtils = new utils.PetPetUtils();
 const collection = new oceanic.Collection();
@@ -34,7 +29,6 @@ const commands = [
             description: "The delay between each frame. Defaults to 20."
         }),
         async execute(interaction) {
-            console.log("hiii!!");
             await interaction.defer();
             const user = interaction.data.options.getUser("user", true);
             const delay = interaction.data.options.getInteger("delay");
@@ -70,10 +64,10 @@ bot.on("interactionCreate", async (i) => {
         if (error)
             console.error(error);
         if (!interaction.acknowledged) {
-            await interaction.createMessage({content: `There was an error while executing this command, error is ${error}`});
+            await interaction.createMessage({ content: `There was an error while executing this command, error is ${error}` });
         }
         else {
-            await interaction.editOriginal({content: `There was an error while executing this command, error is ${error}`});
+            await interaction.editOriginal({ content: `There was an error while executing this command, error is ${error}` });
         }
     }
 });
